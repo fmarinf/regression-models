@@ -1,0 +1,13 @@
+[package]
+name = "my-project"
+version = "0.1.0"
+authors = ["runner"]
+edition = "2021"
+
+[dependencies]
+ndarray = "0.15"
+ndarray-csv = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+rand = "0.8"
+plotters = "0.3"
+tch = { version = "0.1", default-features = false }

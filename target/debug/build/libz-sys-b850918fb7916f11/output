@@ -1,0 +1,276 @@
+cargo:rerun-if-env-changed=LIBZ_SYS_STATIC
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-env-changed=ZLIB_NO_PKG_CONFIG
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG
+cargo:rerun-if-env-changed=PKG_CONFIG
+cargo:rerun-if-env-changed=ZLIB_STATIC
+cargo:rerun-if-env-changed=ZLIB_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+cargo-warning=Could not run `"pkg-config" "--libs" "--cflags" "zlib"`
+The pkg-config command could not be found.
+
+Most likely, you need to install a pkg-config package for your OS.
+Try `apt install pkg-config`, or `yum install pkg-config`,
+or `pkg install pkg-config`, or `apk add pkgconfig` depending on your distribution.
+
+If you've already installed it, ensure the pkg-config command is one of the
+directories in the PATH environment variable.
+
+If you did not expect this build to link to a pre-installed system library,
+then check documentation of the libz-sys crate for an option to
+build the library from source, or disable features or dependencies
+that require pkg-config.
+OPT_LEVEL = Some("0")
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-gnu
+CC_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CC_x86_64_unknown_linux_gnu
+CC_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CC
+HOST_CC = None
+cargo:rerun-if-env-changed=CC
+CC = Some("gcc")
+cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-gnu
+CFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_gnu
+CFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CFLAGS
+HOST_CFLAGS = None
+cargo:rerun-if-env-changed=CFLAGS
+CFLAGS = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("true")
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+running "gcc" "src/smoke.c" "-o" "/dev/null" "-lz"
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/adler32.o" "-c" "src/zlib/adler32.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/adler32.c:8:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/compress.o" "-c" "src/zlib/compress.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/compress.c:9:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/crc32.o" "-c" "src/zlib/crc32.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/crc32.c:31:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/deflate.o" "-c" "src/zlib/deflate.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/deflate.h:16,
+cargo:warning=                 from src/zlib/deflate.c:52:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/infback.o" "-c" "src/zlib/infback.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/infback.c:13:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inffast.o" "-c" "src/zlib/inffast.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/inffast.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inflate.o" "-c" "src/zlib/inflate.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/inflate.c:83:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inftrees.o" "-c" "src/zlib/inftrees.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/inftrees.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/trees.o" "-c" "src/zlib/trees.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/deflate.h:16,
+cargo:warning=                 from src/zlib/trees.c:37:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/uncompr.o" "-c" "src/zlib/uncompr.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/uncompr.c:9:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/zutil.o" "-c" "src/zlib/zutil.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/limits.h:26,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:203,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/syslimits.h:7,
+cargo:warning=                 from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed/limits.h:34,
+cargo:warning=                 from src/zlib/zconf.h:418,
+cargo:warning=                 from src/zlib/zlib.h:34,
+cargo:warning=                 from src/zlib/zutil.h:22,
+cargo:warning=                 from src/zlib/zutil.c:8:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzclose.o" "-c" "src/zlib/gzclose.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:27,
+cargo:warning=                 from src/zlib/gzguts.h:21,
+cargo:warning=                 from src/zlib/gzclose.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzlib.o" "-c" "src/zlib/gzlib.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:27,
+cargo:warning=                 from src/zlib/gzguts.h:21,
+cargo:warning=                 from src/zlib/gzlib.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzread.o" "-c" "src/zlib/gzread.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:27,
+cargo:warning=                 from src/zlib/gzguts.h:21,
+cargo:warning=                 from src/zlib/gzread.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+running: "gcc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src/zlib" "-fvisibility=hidden" "-DSTDC" "-D_LARGEFILE64_SOURCE" "-D_POSIX_SOURCE" "-o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzwrite.o" "-c" "src/zlib/gzwrite.c"
+cargo:warning=In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/libc-header-start.h:33,
+cargo:warning=                 from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:27,
+cargo:warning=                 from src/zlib/gzguts.h:21,
+cargo:warning=                 from src/zlib/gzwrite.c:6:
+cargo:warning=/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+cargo:warning=  412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+cargo:warning=      |    ^~~~~~~
+exit status: 0
+cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-gnu
+AR_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=AR_x86_64_unknown_linux_gnu
+AR_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_AR
+HOST_AR = None
+cargo:rerun-if-env-changed=AR
+AR = Some("ar")
+cargo:rerun-if-env-changed=ARFLAGS_x86_64-unknown-linux-gnu
+ARFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=ARFLAGS_x86_64_unknown_linux_gnu
+ARFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_ARFLAGS
+HOST_ARFLAGS = None
+cargo:rerun-if-env-changed=ARFLAGS
+ARFLAGS = None
+running: "ar" "cq" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/libz.a" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/adler32.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/compress.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/crc32.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/deflate.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/infback.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inffast.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inflate.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/inftrees.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/trees.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/uncompr.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/zutil.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzclose.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzlib.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzread.o" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/src/zlib/gzwrite.o"
+exit status: 0
+running: "ar" "s" "/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib/libz.a"
+exit status: 0
+cargo:rustc-link-lib=static=z
+cargo:rustc-link-search=native=/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib
+cargo:root=/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out
+cargo:rustc-link-search=native=/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/lib
+cargo:include=/home/runner/chat-bot/target/debug/build/libz-sys-b850918fb7916f11/out/include
